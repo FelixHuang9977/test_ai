@@ -1,0 +1,33 @@
+實作純命令行的伺服器測試框架
+專注於系統層級的測試
+這個框架將支援擴充測試用例
+採用pytest框架
+
+目錄架構
+testcase/
+testcase/cpu   放cpu 相關測試項目
+
+
+提供一個命令列介面:
+diag_cli
+
+可以list all test cases
+透過pytest來執行相關測試
+
+建立docs 目錄
+將diag_cli完整的指南寫入 docs/diag_cli_guide.md 文件
+    diag_cli_guide.md 文件要包含如何使用 跟 範例 跟 預期輸出
+    把所有的說明 都寫入文件
+
+    針對每個在testcase的測試項目
+    也都生成一份文件放在docs 目錄下
+
+
+RELEASE:
+mkdir wheelhouse && pip download -r requirements.txt -d wheelhouse
+
+offline install:
+pip install -r requirements.txt --no-index --find-links wheelhouse
+
+pytest:
+python -m pytest testcase/usb/test_usb_info.py::TestUSBInfo::test_usb_list
