@@ -1,0 +1,72 @@
+Diag CLI 工具安裝與使用指南
+=========================
+
+1. 安裝步驟
+-----------------
+# 安裝必要套件
+sudo apt-get update
+sudo apt-get install python3-pip python3-psutil
+
+# 安裝 diag_cli
+pip install diag-cli
+
+# 驗證安裝
+diag_cli --version
+
+
+2. 基本使用方法
+-----------------
+# 查看幫助
+diag_cli --help
+
+# 查看版本
+diag_cli --version
+
+# 查看可用命令
+diag_cli list
+
+
+3. 主要功能
+-----------------
+status  : 檢查系統狀態
+test    : 執行測試案例
+monitor : 監控系統
+report  : 生成報告
+
+
+4. 常用命令範例
+-----------------
+# 檢查系統狀態
+diag_cli status
+
+# 執行所有測試
+diag_cli test --all
+
+# 監控系統
+diag_cli monitor
+
+# 生成報告
+diag_cli report
+
+
+5. 配置設定
+-----------------
+配置文件位置：/etc/diag_cli/config.yaml
+用戶配置：~/.config/diag_cli/config.yaml
+
+
+6. 常見問題
+-----------------
+問題：Command not found
+解決：確認 PATH 環境變數包含 pip 安裝路徑
+
+問題：Permission denied
+解決：使用 sudo 執行命令
+
+
+7. 使用建議
+-----------------
+- 定期執行系統檢查
+- 保存測試報告
+- 設置自動監控
+- 定期更新工具

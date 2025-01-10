@@ -6,6 +6,8 @@
 目錄架構
 testcase/
 testcase/cpu   放cpu 相關測試項目
+testcase/usb   放usb 相關測試項目
+testcase/storage   放usb 相關測試項目
 
 
 提供一個命令列介面:
@@ -17,11 +19,14 @@ diag_cli
 建立docs 目錄
 將diag_cli完整的指南寫入 docs/diag_cli_guide.md 文件
     diag_cli_guide.md 文件要包含如何使用 跟 範例 跟 預期輸出
-    把所有的說明 都寫入文件
+    把diag_cli的所有的說明 都寫入文件diag_cli_guide.md
 
     針對每個在testcase的測試項目
     也都生成一份文件放在docs 目錄下
 
+建立專門的文件(diag_cli_guide.txt) 來說明如何安裝跟使用diag_cli 跟如何執行測試案例。
+建立專門的文件(test_usb.txt) 來說明如何執行 USB 測試案例。
+建立專門的文件(test_cpu.txt) 來說明如何執行 CPU 測試案例。
 
 RELEASE:
 mkdir wheelhouse && pip download -r requirements.txt -d wheelhouse
