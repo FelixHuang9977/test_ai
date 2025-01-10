@@ -6,6 +6,11 @@
 
 ### 安裝依賴
 ```bash
-make setup
 
-diag_cli help
+in development (when you git clone for the first time)
+make setup_dev
+
+
+in production:
+make setup
+./diag_cli help

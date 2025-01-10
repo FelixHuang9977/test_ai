@@ -1,5 +1,18 @@
-all:
-	
+PYTHON_VER=python3.10
+
+all: help
+
+help:
+	-@echo "PYTHON_VER: ${PYTHON_VER}"
+	-@echo
+	-@echo "make setup_dev     #build development env (use this if you are the poor developer)"
+	-@echo "make setup         #setup production env"
+
+setup_dev:
+	-${PYTHON_VER} -m venv venv
+	make download_wheel
+	venv/bin/pip install -r requirements.txt --no-index --find-links wheelhouse
+
 setup:
 	python3 -m venv venv
 	venv/bin/pip install -r requirements.txt --no-index --find-links wheelhouse
@@ -8,16 +21,16 @@ setup:
 
 download_wheel:
 	mkdir -p wheelhouse
-	pip download -r requirements.txt -d wheelhouse
+	venv/bin/pip  download -r requirements.txt -d wheelhouse
 
 setup_online:
 	venv/bin/pip install -r requirements.txt
 	chmod +x ./diag_cli
 
 release:
-	pip freeze > requirements.txt
+	venv/bin/pip  freeze > requirements.txt
 	mkdir -p wheelhouse
-	pip download -r requirements.txt -d wheelhouse
+	venv/bin/pip  download -r requirements.txt -d wheelhouse
 
 clean:
 	-rm -rf venv
