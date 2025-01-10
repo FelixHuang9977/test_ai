@@ -29,7 +29,8 @@ diag_cli
 建立專門的文件(test_cpu.txt) 來說明如何執行 CPU 測試案例。
 
 RELEASE:
-mkdir wheelhouse && pip download -r requirements.txt -d wheelhouse
+pip freeze > requirements.txt
+mkdir -p wheelhouse && pip download -r requirements.txt -d wheelhouse
 
 offline install:
 pip install -r requirements.txt --no-index --find-links wheelhouse
