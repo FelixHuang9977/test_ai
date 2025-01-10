@@ -1,7 +1,6 @@
 # Python
 .pytest_cache
 venv
-wheelhouse
 __pycache__
 
 __pycache__/

@@ -36,3 +36,5 @@ pip install -r requirements.txt --no-index --find-links wheelhouse
 
 pytest:
 python -m pytest testcase/usb/test_usb_info.py::TestUSBInfo::test_usb_list
+
+python -m venv venv
