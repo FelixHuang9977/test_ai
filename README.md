@@ -6,4 +6,6 @@
 
 ### 安裝依賴
 ```bash
-pip install -r requirements.txt
+make setup
+
+diag_cli help

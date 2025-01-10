@@ -1,2 +1,5 @@
 #!/bin/bash
-python diag_cli.py $@
+EXE_FILE="$(realpath $0)"
+DIR="$(dirname $EXE_FILE)"
+
+$DIR/venv/bin/python ./diag_cli.py $@
